@@ -2,34 +2,22 @@ etapes:
     - tache: envoyerCourriel
       options:
            # Le gabarit spécifié doit être défini dans la section "gabaritsCourriels"
-           gabarit: confirmation
+           gabarit: données
            modeBoutonTesterTransmission: simuler 
 
 # Liste des gabarits de courriel pour la tâche "envoyerCourriel"
 gabaritsCourriels:
-  - id: confirmation
+  - id: données
     # Liste des destinataires (peut être une liste)
     a:
       tous: 
-        - 'esun-a02@essais.mess.gouv.qc.ca'
-    # Liste des copies conformes (Facultatif, peut être une liste)
-    # Dans cet exemple, une des adresse réfère à un champ du formulaire nommé "testCourriel"
-    cc:
-      tous:
-        - 'esun-a05@essais.mess.gouv.qc.ca'
-        - '{{donneesFormulaire.form.testCourriel}}'
-    # Liste des copies conformes invisibles (Facultatif, peut être une liste)
-    # Dans cet exemple, une des adresse réfère à la partie variable "partie3" définie dans le module "envoyerCourriel"
-    cci:
-      tous:
-        - 'esun-a04@essais.mess.gouv.qc.ca'
-        - '{{envoyerCourriel.partiesVariables.partie3}}'
+        - 'BGCR@economie.gouv.qc.ca'
     # Nom de l'expéditeur (Par défaut, "Formulaires en ligne" ou "Online forms" selon la langue)
-    nomExpediteur: Test FRW Transmission
+    nomExpediteur: Questionnaire de collecte 2026
     # Permet de spécifier l'adresse de retour
     retourA: '{{envoyerCourriel.partiesVariables.partie3}}'
     # L'objet du courriel peut contenir des parties variables
-    objet: '{{envoyerCourriel.partiesVariables.partie1}} demande {{envoyerCourriel.partiesVariables.partie2}}'
+    objet: '{{envoyerCourriel.partiesVariables.partie1}}{{donneesFormulaire.form.MO}} {{envoyerCourriel.partiesVariables.partie2}}'
     # Les données du formulaires peuvent être réutilisées dans le contenu du courriel.
     # Les données retournées par Moneris lors d'un paiement sont également accessibles.
     corps: |
