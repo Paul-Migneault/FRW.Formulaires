@@ -2,7 +2,7 @@
 # debug: langue=auto, showAll=false
 config:
   securite: 
-    accesAnonyme: true
+    accesAnonyme: true 
   title:
     fr: Demande de prise en charge d’une personne immigrante
     en: Application for the support of an immigrant
@@ -656,4 +656,5 @@ form:
               classes: texte-revision
               text: 
                 fr: Votre formulaire est validé. Vous pouvez cliquer sur le bouton « Soumettre ». 
+
                 en: Your form is validated. You can click the "Submit" button. 
