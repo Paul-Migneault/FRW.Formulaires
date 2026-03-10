@@ -21,11 +21,6 @@ gabaritsCourriels:
     # Les données du formulaires peuvent être réutilisées dans le contenu du courriel.
     # Les données retournées par Moneris lors d'un paiement sont également accessibles.
     corps: |
-      <p>ceci est un test</p>
-      <p>Exemple1a : {{donneesFormulaire.form.MO}}, Exemple1b : {{donneesFormulaire.form.Exemple1b.0}}</p>
-        # Pour faire afficher les documents téléchargeables, il faut ajouter le tableau ci-dessous. Une liste contenant chaque document avec son nom original dans FRW sera ajoutée au contenu du courriel. Sur le clique du lien, le document sera téléchargé.
-        <ul>
-          {{#listePJ}}
-        <li><a href="{{url}}">{{nomOriginal}}</a></li>
-          {{/listePJ}}
-        </ul>
+      <p>MO : {{donneesFormulaire.form.MO}}</p>
+      <p>1 pour 1 : {{donneesFormulaire.form.Formalités}}</p>
+
