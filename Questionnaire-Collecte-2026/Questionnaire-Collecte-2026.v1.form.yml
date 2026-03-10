@@ -1,6 +1,9 @@
 # yaml-language-server: $schema=https://formulaires.it.mtess.gouv.qc.ca/api/v1/SIS/ObtenirSchema/form
 # debug: langue=auto, showAll=false
-
+config:
+  securite: 
+    accesAnonyme: true 
+    
 form:
   title:
     fr: Questionnaire de collecte d'information aux fins de l'édition 2026 du Rapport sur la réglementation intelligente et les mesures gouvernementales d'allègement réglementaire et administratif
