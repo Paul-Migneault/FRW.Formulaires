@@ -1,0 +1,1422 @@
+# yaml-language-server: $schema=https://formulaires.it.mtess.gouv.qc.ca/api/v1/SIS/ObtenirSchema/form
+# debug: langue=auto, showAll=false
+
+form:
+  title:
+    fr: Questionnaire de collecte d'information aux fins de l'édition 2026 du Rapport sur la réglementation intelligente et les mesures gouvernementales d'allègement réglementaire et administratif
+  sectionsGroup:
+    - sections:
+        - section: 
+            fr: Démarrage du questionnaire
+          id: select
+          components:
+            - name: MO
+              tooltip:
+                text:
+                  fr: 
+                    <p>Avant de débuter le questionnaire, il est important d'identifier votre ministère ou organisme. Cela permettra d'afficher seulement les questions qui vous sont pertinentes dans les différentes sections du questionnaire.</p>
+              label:
+                fr: Sélectionnez votre ministère/organisme
+              type: listeDeroulante
+              options: 
+                Test:
+                AMF:
+                AMP:
+                BANQ:
+                CCQ:
+                CNESST:
+                CTQ:
+                MAMH:
+                MAPAQ:
+                MCC:
+                MEIE:
+                MELCCFP:
+                MEQ:
+                MES:
+                MESS:
+                MFA:
+                MFQ:
+                MIFI:
+                MJQ:
+                MLF:
+                MRNF:
+                MSP:
+                MSSS:
+                MTMD:
+                MTO:
+                MTRAV:
+                OPC:
+                OQLF:
+                RACJ:
+                RAMQ:
+                RBQ:
+                Retraite: Retraite Québec
+                RMAAQ:
+                RQ:
+                SAAQ:
+                SCT:
+                SRIDAIL:
+                TAL:
+
+        - section: 
+           fr: Politique gouvernementale en allègement réglementaire et administratif
+          id: politique
+          cacherTexteExplicatifChampsObligatoires: true          
+          components:
+            - type: dynamic
+              tag: div
+              text: 
+                fr: <p>La période couverte pour cette section est du 1er avril 2025 au 31 mars 2026.</p><br>
+            - name: 1pour1
+              type: radio
+              tooltip:
+                text:
+                  fr:  <p>En vertu de l'article 8 de la Politique gouvernementale sur l'allègement réglementaire et administratif, tout ministère ou organisme visé qui propose l’adoption d’une nouvelle formalité administrative doit, au même moment, proposer d’abolir une formalité administrative existante dont le coût pour les entreprises est équivalent.</p>
+              v-if: val('MO') === 'Test' || val('MO') === 'AMF' || val('MO') === 'AMP' || val('MO') === 'CCQ' || val('MO') === 'CNESST' || val('MO') === 'CTQ' || val('MO') === 'MAPAQ' || val('MO') === 'MCC' || val('MO') === 'MELCCFP' || val('MO') === 'MEIE' || val('MO') === 'MESS' || val('MO') === 'MFA' || val('MO') === 'MRNF' || val('MO') === 'OPC' || val('MO') === 'RACJ' || val('MO') === 'RBQ' || val('MO') === 'RMAAQ' || val('MO') === 'RQ' || val('MO') === 'SAAQ'
+              label: 
+                fr: Votre organisation a-t-elle ajouté et retiré des formalités dans le cadre de la règle du «un pour un»?
+              options: 
+                Oui: Oui
+                Non: Non
+            - name: Formalités
+              v-if: val('1pour1') === 'Oui'
+              type: repeatableGroup
+              repeatable: true
+              validations:
+                optional: null
+              label:
+                fr: Formalités ajoutées et retirées dans le cadre de la règle du 1 pour 1
+              instanceLabel:
+                fr: Dossier
+              addLabel:
+                fr: Ajouter un dossier
+              removeLabel:
+                fr: Supprimer ce dossier
+              limit: 30
+              components:
+                - type: inline
+                  components:
+                  - name: NombreFormAjout
+                    type: number
+                    label:
+                      fr: Nombre de formalités ajoutées
+                  - name: NombreFormRetire
+                    type: number
+                    label:
+                      fr: Nombre de formalités retirées
+                - type: inline
+                  components:
+                  - name: CoutFormAjout
+                    type: montant
+                    label:
+                      fr: Coût des formalités ajoutées
+                  - name: CoutFormRetire
+                    type: montant
+                    label:
+                      fr: Coût des formalités retirées
+                - name: dossdec
+                  type: text
+                  label:
+                    fr: Numéro DOSSDEC
+                  validations:
+                      optional: null
+                - name: descFormalités
+                  type: textarea
+                  tooltip: 
+                    text:
+                      fr: Veuillez nommer les formalités touchées par la règle du «un pour un» et indiquer le contexte (projet de loi, de règlement, etc.)
+                  label:
+                    fr: Détails
+            - name: AIR
+              type: radio
+              v-if: val('MO') === 'Test' || val('MO') === 'AMF' || val('MO') === 'AMP' || val('MO') === 'BANQ' || val('MO') === 'CCQ' || val('MO') === 'CNESST' || val('MO') === 'MAMH' || val('MO') === 'MAPAQ' || val('MO') === 'MCC' || val('MO') === 'MELCCFP' || val('MO') === 'MEIE' || val('MO') === 'MEQ' || val('MO') === 'MES' || val('MO') === 'MESS' || val('MO') === 'MFA' || val('MO') === 'MFQ' || val('MO') === 'MIFI' || val('MO') === 'MJQ' || val('MO') === 'MLF' || val('MO') === 'MRNF' || val('MO') === 'MSP' || val('MO') === 'MSSS' || val('MO') === 'MTO' || val('MO') === 'MTMD' || val('MO') === 'MTRAV' || val('MO') === 'OPC' || val('MO') === 'RACJ' || val('MO') === 'RAMQ' || val('MO') === 'RBQ' || val('MO') === 'Retraite' || val('MO') === 'RMAAQ' || val('MO') === 'RQ' || val('MO') === 'SAAQ' || val('MO') === 'SCT' || val('MO') === 'SRIDAIL' || val('MO') === 'TAL'
+              tooltip:
+                text:
+                  fr: En vertu des articles 17 à 19 de la Politique, tout projet pouvant potentiellement avoir un impact sur les entreprises doit être accompagné d'une analyse d'impact réglementaire (AIR).
+              label: 
+                fr: La liste des dossiers faisant l'objet d'une analyse d'impact réglementaire (fournie par le MEIE avec ce questionnaire) est-elle exacte et exhaustive?
+              options: 
+                Oui: Oui
+                Non: Non
+            - name: AIRexp
+              type: textarea
+              v-if: val('AIR') === 'Non'
+              label: 
+                fr: Veuillez indiquer les dossiers manquants ou en trop dans la liste.
+            - name: Formulaires
+              type: radio
+              tooltip:
+                text:
+                  fr: En vertu de l'article 22 de la Politique, tout ministère ou organisme doit publier au préalable, sur son site Web, tout projet de nouveau formulaire s'adressant aux entreprises pour une période de 30 jours afin de recueillir les commentaires des intervenants dans les secteurs d’activité économique concernés.
+              label: 
+                fr: Votre organisation a-t-elle introduit de nouveaux formulaires lors de la période visée?
+              options: 
+                Oui: Oui
+                Non: Non
+            - name: FormulairesDétail
+              v-if: val('Formulaires') === 'Oui'
+              type: repeatableGroup
+              repeatable: true
+              validations:
+                optional: null
+              label:
+                fr: Formulaires introduits
+              instanceLabel:
+                fr: Formulaire
+              addLabel:
+                fr: Ajouter un formulaire
+              removeLabel:
+                fr: Supprimer ce formulaire
+              limit: 30
+              components:
+                - name: NomFormulaire
+                  type: text
+                  label:
+                    fr: Nom du formulaire créé
+                - name: Prépub
+                  type: radio
+                  label:
+                    fr: A-t-il été prépublié sur le web?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+            - name: Mécanisme
+              type: radio
+              tooltip:
+                text:
+                  fr: En vertu des articles 28 et 29 de la Politique, les ministères et organismes responsables de l’élaboration des règles qui ont des impacts sur les entreprises ou qui concernent les entreprises doivent se doter d’un mécanisme de révision de ces règles.
+              label: 
+                fr: Votre organisation a-t-elle un mécanisme de révision des règles à jour?
+              options: 
+                Oui: Oui
+                Non: Non
+            - name: MécanismeNombre
+              type: number
+              label:
+                fr: Nombre de lois et règlements révisés avec le mécanisme de révision dans la période
+              v-if: val('Mécanisme') === 'Oui'
+        - section: 
+           fr: Plan d'action gouvernemental en matière d'allègement réglementaire et administratif 2020-2025
+          id: PA2025
+          cacherTexteExplicatifChampsObligatoires: true          
+          components:
+            - name: P2
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'RACJ' || val('MO') === 'MEIE' || val('MO') === 'MFQ'
+              label: 
+                fr: 'Mesure 2: Définir clairement la notion d’agent distributeur et actualiser les conditions générales d’obtention et de maintien du permis de distributeur de bières et des permis d’entrepôt en fonction de la refonte de ces notions.'
+              components:
+                - name: Statut2
+                  type: listeDeroulante
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Statut de la mesure
+                  options: 
+                    Réalisé: 
+                    En cours: 
+                    À venir:
+                - name: État2
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: État de situation au 31 mars 2026
+            - name: P3
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MAPAQ'
+              label: 
+                fr: 'Mesure 3: Exempter, sauf exception prévue par règlement, un exploitant qui détient un permis de préparation d’aliments en vue de la vente de l’obligation de détenir un deuxième permis.'
+              components:
+                - name: Statut3
+                  type: listeDeroulante
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Statut de la mesure
+                  options: 
+                    Réalisé: 
+                    En cours: 
+                    À venir:
+                - name: État3
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: État de situation au 31 mars 2026
+            - name: P5
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MAPAQ'
+              label: 
+                fr: 'Mesure 5: Adapter la réglementation en fonction des marchés de proximité et revoir les exigences en ce qui a trait aux installations requises.'
+              components:
+                - name: Statut5
+                  type: listeDeroulante
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Statut de la mesure
+                  options: 
+                    Réalisé: 
+                    En cours: 
+                    À venir:
+                - name: État5
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: État de situation au 31 mars 2026
+            - name: P9
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MIFI'
+              label: 
+                fr: 'Mesure 9: Mettre en place, dans le secteur de la transformation agroalimentaire et dans tous les autres secteurs, un programme des travailleurs étrangers temporaires pour le Québec (PTET-Québec) qui serait adapté aux besoins du marché du travail du Québec et de ses régions, tout en étant plus agile et efficient.'
+              components:
+                - name: Statut9
+                  type: listeDeroulante
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Statut de la mesure
+                  options: 
+                    Réalisé: 
+                    En cours: 
+                    À venir:
+                - name: État9
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: État de situation au 31 mars 2026
+            - name: P10
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MESS'
+              label: 
+                fr: 'Mesure 10: Développer un parcours afin que les entreprises, dans le secteur de la transformation agroalimentaire et dans tous les autres secteurs, puissent inscrire une seule fois leurs informations qui seront transmises à travers les différents ministères et organismes lors d’une demande auprès du gouvernement.'
+              components:
+                - name: Statut10
+                  type: listeDeroulante
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Statut de la mesure
+                  options: 
+                    Réalisé: 
+                    En cours: 
+                    À venir:
+                - name: État10
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: État de situation au 31 mars 2026
+            - name: P16
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'RBQ'
+              label: 
+                fr: 'Mesure 16: Faire passer l’obligation du paiement de maintien de la licence d’entrepreneurs et de constructeurs-propriétaires aux deux ans au lieu de chaque année.'
+              components:
+                - name: Statut16
+                  type: listeDeroulante
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Statut de la mesure
+                  options: 
+                    Réalisé: 
+                    En cours: 
+                    À venir:
+                - name: État16
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: État de situation au 31 mars 2026
+            - name: P17
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'RBQ'
+              label: 
+                fr: 'Mesure 17: Revoir les libellés des sous-catégories de licences afin de clarifier les travaux inclus en tenant compte des nouvelles techniques de construction et de l’harmonisation avec l’ensemble de la réglementation.'
+              components:
+                - name: Statut17
+                  type: listeDeroulante
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Statut de la mesure
+                  options: 
+                    Réalisé: 
+                    En cours: 
+                    À venir:
+                - name: État17
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: État de situation au 31 mars 2026
+            - name: P18
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'RBQ'
+              label: 
+                fr: 'Mesure 18: Réviser le Règlement sur le plan de garantie des bâtiments résidentiels neufs.'
+              components:
+                - name: Statut18
+                  type: listeDeroulante
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Statut de la mesure
+                  options: 
+                    Réalisé: 
+                    En cours: 
+                    À venir:
+                - name: État18
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: État de situation au 31 mars 2026
+            - name: P20
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'RQ'
+              label: 
+                fr: 'Mesure 20: Analyser des pistes de simplification aux attestations de revenu Québec en concertation avec l’industrie de la construction. '
+              components:
+                - name: Statut20
+                  type: listeDeroulante
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Statut de la mesure
+                  options: 
+                    Réalisé: 
+                    En cours: 
+                    À venir:
+                - name: État20
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: État de situation au 31 mars 2026
+            - name: P21
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MESS'
+              label: 
+                fr: 'Mesure 21: Centraliser en collaboration avec les ministères et organismes concernés, les différents services provinciaux en un guichet unique (RBQ, CCQ, RQ, AMP) dans la Zone entreprise.'
+              components:
+                - name: Statut21
+                  type: listeDeroulante
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Statut de la mesure
+                  options: 
+                    Réalisé: 
+                    En cours: 
+                    À venir:
+                - name: État21
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: État de situation au 31 mars 2026
+            - name: P22
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'CCQ'
+              label: 
+                fr: 'Mesure 22: Améliorer la gestion des consentements pour la communication de renseignements personnels, notamment à l’aide de nouveaux outils technologiques et afin d’en étendre la durée.'
+              components:
+                - name: Statut22
+                  type: listeDeroulante
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Statut de la mesure
+                  options: 
+                    Réalisé: 
+                    En cours: 
+                    À venir:
+                - name: État22
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: État de situation au 31 mars 2026
+            - name: P26
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MRNF'
+              label: 
+                fr: 'Mesure 26: Déterminer, de concert avec les représentations de l’industrie de la pourvoirie, quels types de projets légers pourraient faire l’objet de préautorisation en vue de permettre leur réalisation rapide en cours de saison d’opération. Déterminer ensuite les conditions dans lesquelles des préautorisations pourraient, le cas échéant, être accordées.'
+              components:
+                - name: Statut26
+                  type: listeDeroulante
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Statut de la mesure
+                  options: 
+                    Réalisé: 
+                    En cours: 
+                    À venir:
+                - name: État26
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: État de situation au 31 mars 2026
+            - name: P32
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'RQ'
+              label: 
+                fr: 'Mesure 32: Concevoir et implanter un module d’enregistrement des ventes virtuel (MEV-WEB) permettant la remise de la facture électronique au client et la transmission des données de transaction en temps continu à Revenu Québec.'
+              components:
+                - name: Statut32
+                  type: listeDeroulante
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Statut de la mesure
+                  options: 
+                    Réalisé: 
+                    En cours: 
+                    À venir:
+                - name: État32
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: État de situation au 31 mars 2026
+            - name: P35
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MELCCFP'
+              label: 
+                fr: 'Mesure 35: Réévaluer l’encadrement réglementaire en matière d’eau potable appliqué aux réseaux de distribution à la clientèle touristique situés en région éloignée. '
+              components:
+                - name: Statut35
+                  type: listeDeroulante
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Statut de la mesure
+                  options: 
+                    Réalisé: 
+                    En cours: 
+                    À venir:
+                - name: État35
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: État de situation au 31 mars 2026
+            - name: P39
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MSSS'
+              label: 
+                fr: 'Mesure 39: Réaliser un exercice de révision et d’harmonisation de l’ensemble des lois et règlements ayant des répercussions sur l’exploitation des RPA pour s’assurer d’une plus grande cohérence. Cet exercice viserait notamment à arrimer les diverses lois et règlements aux définitions et orientations incluses dans la Loi sur les services de santé et les services sociaux et son règlement sur la certification des RPA.'
+              components:
+                - name: Statut39
+                  type: listeDeroulante
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Statut de la mesure
+                  options: 
+                    Réalisé: 
+                    En cours: 
+                    À venir:
+                - name: État39
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: État de situation au 31 mars 2026
+            - name: P40
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MTMD'
+              label: 
+                fr: 'Mesure 40: Rendre accessibles des permis spéciaux de circulation de classe 5 qui ne nécessitent pas la réalisation des expertises avant d’être délivrés à une plus grande variété de configurations de véhicules.'
+              components:
+                - name: Statut40
+                  type: listeDeroulante
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Statut de la mesure
+                  options: 
+                    Réalisé: 
+                    En cours: 
+                    À venir:
+                - name: État40
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: État de situation au 31 mars 2026
+            - type: dynamic
+              tag: div
+              v-if: val('MO') !== 'MEIE' && val('MO') !== 'MFQ' && val('MO') !== 'RACJ' && val('MO') !== 'MAPAQ' && val('MO') !== 'MIFI' && val('MO') !== 'MESS' && val('MO') !== 'RBQ' && val('MO') !== 'CCQ' && val('MO') !== 'MRNF' && val('MO') !== 'RQ' && val('MO') !== 'MELCCFP' && val('MO') !== 'MSSS' && val('MO') !== 'MTMD'
+              text: 
+                fr:  <p>Votre ministère ou organisme n'a pas de mesures en cours à ce stade-ci. Vous pouvez passez à la section suivante.</p><br>
+        - section: 
+           fr: Loi modifiant diverses dispositions législatives aux fins d’allègement du fardeau administratif (Projet de loi omnibus 85).
+          id: PL85
+          cacherTexteExplicatifChampsObligatoires: true          
+          components:
+            - name: L1
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MAPAQ'
+              label:
+                fr: 'Mesure 1: Abrogation du concept d’unité de maintien chaud ou froid'
+              components:
+                - name: StatutL1
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL1
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+                - type: dynamic
+                  tag: div
+                  text:
+                    fr: '<p>Estimation initiale des économies récurrentes: <b>1 393 105 $</b></p><br>'
+                - name: ÉconomieRéelleL1
+                  type: montant
+                  validations:
+                    optional: null
+                  label:
+                    fr: Estimation a posteriori des économies récurrentes 
+            - name: L2
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MAPAQ'
+              label:
+                fr: 'Mesure 2: Retrait de l’obligation d’inscrire le numéro d’attestation du titulaire de formation de gestionnaire d’établissement alimentaire'
+              components:
+                - name: StatutL2
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL2
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L3
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MAPAQ'
+              label:
+                fr: 'Mesure 3: Retrait de l’obligation pour les détenteurs d’un permis de préparation alimentaire en vue de la vente en gros de détenir également le permis de vente au détail ou de restauration pour un même lieu'
+              components:
+                - name: StatutL3
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL3
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+                - type: dynamic
+                  tag: div
+                  text:
+                    fr: '<p>Estimation initiale des économies récurrentes: <b>143 001 $</b></p><br>'
+                - name: ÉconomieRéelleL3
+                  type: montant
+                  validations:
+                    optional: null
+                  label:
+                    fr: Estimation a posteriori des économies récurrentes
+            - name: L4
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MAPAQ'
+              label:
+                fr: 'Mesure 4: Retrait de l’obligation pour l’exploitant d’une usine laitière de détenir un permis de préparation ou de vente en gros d’un succédané de produit laitier pour un même lieu'
+              components:
+                - name: StatutL4
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL4
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+                - type: dynamic
+                  tag: div
+                  text:
+                    fr: '<p>Estimation initiale des économies récurrentes: <b>2 916 $</b></p><br>'
+                - name: ÉconomieRéelleL4
+                  type: montant
+                  validations:
+                    optional: null
+                  label:
+                    fr: Estimation a posteriori des économies récurrentes
+            - name: L5
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MAPAQ'
+              label:
+                fr: 'Mesure 5: Réduction du coût du permis d’exploitation d’établissement de préparation pour fin de vente en gros de succédanés de produits laitiers'
+              components:
+                - name: StatutL5
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL5
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+                - type: dynamic
+                  tag: div
+                  text:
+                    fr: '<p>Estimation initiale des économies récurrentes: <b>1 745 $</b></p><br>'
+                - name: ÉconomieRéelleL5
+                  type: montant
+                  validations:
+                    optional: null
+                  label:
+                    fr: Estimation a posteriori des économies récurrentes
+            - name: L6
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MFQ'
+              label:
+                fr: 'Mesure 6: Exemption au marquage des contenants de bière des microbrasseries'
+              components:
+                - name: StatutL6
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL6
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+                - type: dynamic
+                  tag: div
+                  text:
+                    fr: '<p>Estimation initiale des économies récurrentes: <b>1 350 333 $</b></p><br>'
+                - name: ÉconomieRéelleL6
+                  type: montant
+                  validations:
+                    optional: null
+                  label:
+                    fr: Estimation a posteriori des économies récurrentes
+            - name: L7
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'RACJ'
+              label:
+                fr: 'Mesure 7: Exception à l’interdiction du double permis pour les boissons alcooliques fabriquées à partir de grains de céréales'
+              components:
+                - name: StatutL7
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL7
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+                - type: dynamic
+                  tag: div
+                  text:
+                    fr: '<p>Estimation initiale des économies récurrentes: <b>49 215 $</b></p><br>'
+                - name: ÉconomieRéelleL7
+                  type: montant
+                  validations:
+                    optional: null
+                  label:
+                    fr: Estimation a posteriori des économies récurrentes
+            - name: L8
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'RACJ'
+              label:
+                fr: 'Mesure 8: Permettre la sous-traitance des activités de fabrication de boissons alcooliques'
+              components:
+                - name: StatutL8
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL8
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L9
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'RACJ'
+              label:
+                fr: 'Mesure 9: Permettre la sous-traitance des activités de livraison de boissons alcooliques'
+              components:
+                - name: StatutL9
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL9
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+                - type: dynamic
+                  tag: div
+                  text:
+                    fr: '<p>Estimation initiale des économies récurrentes: <b>16 140 054 $</b></p><br>'
+                - name: ÉconomieRéelleL9
+                  type: montant
+                  validations:
+                    optional: null
+                  label:
+                    fr: Estimation a posteriori des économies récurrentes
+            - name: L10
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'RACJ'
+              label:
+                fr: 'Mesure 10: Permettre l’approbation par un technologue professionnel du plan détaillé de l’aménagement des pièces ou terrasses et du document établissant le calcul du nombre de personnes pouvant être admises simultanément dans chacun de ces endroits'
+              components:
+                - name: StatutL10
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL10
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L11
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MSP'
+              label:
+                fr: 'Mesure 11: Retrait de l’obligation pour le représentant de l’agence de se consacrer à temps plein aux activités de l’entreprise et de produire une déclaration'
+              components:
+                - name: StatutL11
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL11
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L12
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MSP'
+              label:
+                fr: 'Mesure 12: Abrogation de l’obligation de fournir un cautionnement au BSP'
+              components:
+                - name: StatutL12
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL12
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+                - type: dynamic
+                  tag: div
+                  text:
+                    fr: '<p>Estimation initiale des économies récurrentes: <b>357 000 $</b></p><br>'
+                - name: ÉconomieRéelleL12
+                  type: montant
+                  validations:
+                    optional: null
+                  label:
+                    fr: Estimation a posteriori des économies récurrentes
+            - name: L13
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MRNF'
+              label:
+                fr: 'Mesure 13: Alléger la présentation d’un document numérisé'
+              components:
+                - name: StatutL13
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL13
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+                - type: dynamic
+                  tag: div
+                  text:
+                    fr: '<p>Estimation initiale des économies récurrentes: <b>123 201 $</b></p><br>'
+                - name: ÉconomieRéelleL13
+                  type: montant
+                  validations:
+                    optional: null
+                  label:
+                    fr: Estimation a posteriori des économies récurrentes
+            - name: L14
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MRNF'
+              label:
+                fr: 'Mesure 14: Limiter le volume des mégadocuments'
+              components:
+                - name: StatutL14
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL14
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L15
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MRNF'
+              label:
+                fr: 'Mesure 15: Alléger la publication de la transmission de créance d’une société dissoute à son actionnaire unique'
+              components:
+                - name: StatutL15
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL15
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L16
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MRNF'
+              label:
+                fr: 'Mesure 16: Alléger la publication d’un avis de changement de nom du titulaire ou du constituant d’un droit publié'
+              components:
+                - name: StatutL16
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL16
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+                - type: dynamic
+                  tag: div
+                  text:
+                    fr: '<p>Estimation initiale des économies récurrentes: <b>43 873 $</b></p><br>'
+                - name: ÉconomieRéelleL16
+                  type: montant
+                  validations:
+                    optional: null
+                  label:
+                    fr: Estimation a posteriori des économies récurrentes
+            - name: L17
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MELCCFP'
+              label:
+                fr: 'Mesure 17: Priorisation des besoins en eau des secteurs agricoles et aquacoles'
+              components:
+                - name: StatutL17
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL17
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L18
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MCC'
+              label:
+                fr: 'Mesure 18: Abrogation du permis de matériel vidéo'
+              components:
+                - name: StatutL18
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL18
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+                - type: dynamic
+                  tag: div
+                  text:
+                    fr: '<p>Estimation initiale des économies récurrentes: <b>154 676 $</b></p><br>'
+                - name: ÉconomieRéelleL18
+                  type: montant
+                  validations:
+                    optional: null
+                  label:
+                    fr: Estimation a posteriori des économies récurrentes
+            - name: L19
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MFA'
+              label:
+                fr: 'Mesure 19: Prolongation du délai de transmission des rapports financiers'
+              components:
+                - name: StatutL19
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL19
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L20
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MFA'
+              label:
+                fr: 'Mesure 20: Rehaussement du seuil de subvention à partir duquel les rapports financiers doivent être vérifiés'
+              components:
+                - name: StatutL20
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL20
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+                - type: dynamic
+                  tag: div
+                  text:
+                    fr: '<p>Estimation initiale des économies récurrentes: <b>30 000 $</b></p><br>'
+                - name: ÉconomieRéelleL20
+                  type: montant
+                  validations:
+                    optional: null
+                  label:
+                    fr: Estimation a posteriori des économies récurrentes
+            - name: L21
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MESS'
+              label:
+                fr: 'Mesure 21: Réduction des frais exigés pour une demande de regroupement d’informations'
+              components:
+                - name: StatutL21
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL21
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+                - type: dynamic
+                  tag: div
+                  text:
+                    fr: '<p>Estimation initiale des économies récurrentes: <b>5 776 $</b></p><br>'
+                - name: ÉconomieRéelleL21
+                  type: montant
+                  validations:
+                    optional: null
+                  label:
+                    fr: Estimation a posteriori des économies récurrentes
+            - name: L22
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MTRAV'
+              label:
+                fr: 'Mesure 22: Retrait de l’obligation des employeurs de transmettre une copie de l’avis de licenciement collectif à la Commission des normes, de l’équité, de la santé et de la sécurité du travail'
+              components:
+                - name: StatutL22
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL22
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+                - type: dynamic
+                  tag: div
+                  text:
+                    fr: '<p>Estimation initiale des économies récurrentes: <b>1 611 $</b></p><br>'
+                - name: ÉconomieRéelleL22
+                  type: montant
+                  validations:
+                    optional: null
+                  label:
+                    fr: Estimation a posteriori des économies récurrentes
+            - name: L23
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MTRAV'
+              label:
+                fr: 'Mesure 23: Modification de l’habilitation réglementaire relative au registre des contaminants et des matières dangereuses'
+              components:
+                - name: StatutL23
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL23
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L26
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MEIE'
+              label:
+                fr: 'Mesure 26: Autorisation à la ministre d’implanter des projets pilotes'
+              components:
+                - name: StatutL26
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL26
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L27
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MEIE'
+              label:
+                fr: 'Mesure 27: Révision des heures d’ouverture de la Société québécoise du cannabis'
+              components:
+                - name: StatutL27
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL27
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L28
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MEIE'
+              label:
+                fr: 'Mesure 28: Retrait de la restriction d’au plus quatre personnes assurant le service dans les établissements d’alimentation et les pharmacies'
+              components:
+                - name: StatutL28
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL28
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L31
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MEIE'
+              label:
+                fr: 'Mesure 31: Abaissement du seuil minimal d’un investissement du Fonds pour la croissance des entreprises québécoises'
+              components:
+                - name: StatutL31
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL31
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L32
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MEIE'
+              label:
+                fr: 'Mesure 32: Élargissement des types de prises de participation permis pour les fonds d’investissement du FCEQ et du FCRNE'
+              components:
+                - name: StatutL32
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL32
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L34
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MAPAQ'
+              label:
+                fr: 'Mesure 34: Retrait de l’interdiction de la présence des chiens sur les terrasses de restaurant'
+              components:
+                - name: StatutL34
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL34
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L35
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MES'
+              label:
+                fr: 'Mesure 35: Modifications aux modalités des taux d’intérêt relatifs à l’aide financière aux études'
+              components:
+                - name: StatutL35
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL35
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - type: dynamic
+              tag: div
+              v-if: val('MO') !== 'MEIE' && val('MO') !== 'MFQ' && val('MO') !== 'RACJ' && val('MO') !== 'MAPAQ' && val('MO') !== 'MESS' && val('MO') !== 'MRNF' && val('MO') !== 'MELCCFP' && val('MO') !== 'MSP' && val('MO') !== 'MFA' && val('MO') !== 'MTRAV' && val('MO') !== 'MES' && val('MO') !== 'MCC'
+              text: 
+                fr:  <p>Votre ministère ou organisme n'a pas de mesures dans le PL 85. Vous pouvez passez à la section suivante.</p><br>
+        - section:
+            fr: Autres mesures d'allègement
+          id: Autres
+          cacherTexteExplicatifChampsObligatoires: true
+          components:
+            - type: dynamic
+              tag: div
+              text:
+                fr: "<p>Veuillez inscrire ci-dessous toutes les autres mesures d'allègement réglementaire, d'allègement administratif et de prestation électronique mises en oeuvre par votre ministère ou organisme durant la période du 1er avril 2025 au 31 mars 2026.</p><br>"
+            - name: AutresMesures
+              type: repeatableGroup
+              repeatable: true
+              validations:
+                optional: null
+              label:
+                fr: Autres mesures d'allègement
+              instanceLabel:
+                fr: Mesure
+              addLabel:
+                fr: Ajouter une mesure
+              removeLabel:
+                fr: Supprimer cette mesure
+              limit: 30
+              components:
+                - name: NomAutreMesure
+                  type: text
+                  tooltip:
+                    text:
+                      fr: Nommez la nouvelle mesure d'allègement réglementaire ou administratif ou bien le service dont la prestation peut désormais se faire électroniquement.
+                  label:
+                    fr: Nom de la mesure
+                - name: TypeAutreMesure
+                  type: listeDeroulante
+                  label:
+                    fr: Type de mesure
+                  options:
+                    Reg: Allègement réglementaire
+                    Adm: Allègement administratif
+                    PES: Prestation électronique de service
+                - name: RésultatsAutreMesure
+                  type: textarea
+                  tooltip:
+                    text:
+                      fr: Expliquez ici comment cette mesure s'est concrétisée, que ce soit par de nouveaux règlements, procédures ou systèmes.
+                  label:
+                    fr: Résultats
+                - name: DateAutreMesure
+                  type: date
+                  tooltip:
+                    text:
+                      fr: La date de mise en place doit être entre le 1er avril 2025 et le 31 mars 2026.
+                  label:
+                    fr: Date de mise en place
+                - name: ImpactAutreMesure
+                  type: listeDeroulante
+                  tooltip:
+                    text:
+                      fr: Utilisez la liste déroulante pour indiquer le principal impact positif pour les entreprises.
+                  label: 
+                    fr: Principal impact sur les entreprises
+                  options:
+                    Temps: Réduction du temps passé à remplir formalités
+                    Nombre: Réduction du nombre de formalités
+                    Fréquence: Réduction de la fréquence de formalités
+                    Coût: Réduction des coûts de conformité
+                    Délais: Réduction des délais
+                    Clarté: Augmentation de la clarté
+                    Flexibilité: Plus de flexibilité
+                    Structurant:
+                    Autre: Autre (spécifier dans les Résultats) 
+        - section:
+            fr: Projets de loi en allègement
+          id: Projets
+          cacherTexteExplicatifChampsObligatoires: true
+          components:
+            - type: dynamic
+              tag: div
+              text:
+                fr: "<p>Cette section vise à recenser les projets de loi principalement composés de mesures d'allègement, mais qui n'ont pas été portés par le MEIE. Le projet doit avoir été déposé entre le 1er avril 2025 et le 31 mars 2026.</p><br>"
+            - name: ProjetsAlleg
+              type: repeatableGroup
+              repeatable: true
+              validations:
+                optional: null
+              label:
+                fr: Projets de loi en allègement déposés en 2025-2026
+              instanceLabel:
+                fr: Projet de loi
+              addLabel:
+                fr: Ajouter un projet
+              removeLabel:
+                fr: Supprimer ce projet
+              limit: 30
+              components:
+                - name: NuméroPL
+                  type: text
+                  label:
+                    fr: Numéro DOSSDEC
+                - name: TitrePL
+                  type: text
+                  label:
+                    fr: Titre
+                - name: SecteursPL
+                  type: text
+                  tooltip:
+                    text:
+                      fr: Inscrivez ici les secteurs d'activités dans lesquels opèrent les entreprises touchées par les mesures du projet de loi.
+                  label:
+                    fr: Secteur(s) couvert(s)
+                - type: inline
+                  components:
+                    - name: DatePL
+                      type: date
+                      tooltip:
+                        text:
+                          fr: Inscrivez ici la date de dépôt du projet de loi à l'Assemblée nationale
+                      label:
+                        fr: Date de dépôt
+                    - name: ImpactPL
+                      type: montant
+                      tooltip:
+                        text:
+                          fr: Inscrivez l'estimation des économies récurrentes pour les entreprises découlant des mesures du projet de loi.
+                      label: 
+                        fr: Impact sur les entreprises ($)
+        - section:
+            fr: Révision
+          id: revision
+          cacherTexteExplicatifChampsObligatoires: true
+          components:
+            - type: dynamic
+              tag: div
+              v-if: val('EtatRevision') === 'initial'
+              classes: texte-revision
+              text:
+                fr: Vous devez cliquer sur le bouton « Valider » afin de vérifier que le formulaire est rempli correctement.
+            - type: dynamic
+              tag: div
+              v-if: val('EtatRevision') === 'sans-erreur'
+              classes: texte-revision
+              text:
+                fr: Votre formulaire est validé. Vous pouvez cliquer sur le bouton « Soumettre ».
+                  
