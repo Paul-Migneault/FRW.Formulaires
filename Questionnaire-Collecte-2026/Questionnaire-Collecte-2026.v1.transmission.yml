@@ -17,10 +17,14 @@ gabaritsCourriels:
     # Permet de spécifier l'adresse de retour
     retourA: '{{envoyerCourriel.partiesVariables.partie3}}'
     # L'objet du courriel peut contenir des parties variables
-    objet: '{{envoyerCourriel.partiesVariables.partie1}}{{donneesFormulaire.form.MO}}{{envoyerCourriel.partiesVariables.partie2}}'
+    objet: '{{envoyerCourriel.partiesVariables.partie1}}Questionnaire {{donneesFormulaire.form.MO}}{{envoyerCourriel.partiesVariables.partie2}}'
     # Les données du formulaires peuvent être réutilisées dans le contenu du courriel.
     # Les données retournées par Moneris lors d'un paiement sont également accessibles.
     corps: |
-      <p>MO : {{donneesFormulaire.form}}</p>
-      <p>1 pour 1 : {{donneesFormulaire.form.Formalités}}</p>
-
+      <p>MO : {{donneesFormulaire.form.MO}}</p>
+      <p>1 pour 1 : {{donneesFormulaire.form.1pour1}} {{donneesFormulaire.form.Formalités}}</p>
+      <p>AIR : {{donneesFormulaire.form.AIR}} {{donneesFormulaire.form.AIRexp}}</p>
+      <p>Formulaires : {{donneesFormulaire.form.Formulaires}} {{donneesFormulaire.form.FormulairesDétail}}</p>
+      <p>Mécanisme : {{donneesFormulaire.form.Mécanisme}} {{donneesFormulaire.form.MécanismeNombre}}</p>
+      <p></p>
+      <p>Plan d'action: {{donneesFormulaire.form.PA2025}}</p>
