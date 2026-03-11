@@ -27,4 +27,4 @@ gabaritsCourriels:
       <p>Formulaires : {{donneesFormulaire.form.Formulaires}} {{donneesFormulaire.form.FormulairesDétail}}</p>
       <p>Mécanisme : {{donneesFormulaire.form.Mécanisme}} {{donneesFormulaire.form.MécanismeNombre}}</p>
       <p></p>
-      <p>Plan d'action: {{donneesFormulaire.form.PA2025}}</p>
+      <p>Plan d'action: {{donneesFormulaire.form.P2}}</p>
