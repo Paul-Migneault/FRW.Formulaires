@@ -21,13 +21,4 @@ gabaritsCourriels:
     # Les données du formulaires peuvent être réutilisées dans le contenu du courriel.
     # Les données retournées par Moneris lors d'un paiement sont également accessibles.
     corps: |
-      <p>MO : {{donneesFormulaire.form.MO}}</p>
-      <p>1 pour 1 : {{donneesFormulaire.form.1pour1}} {{donneesFormulaire.form.Formalités}}</p>
-      <p>AIR : {{donneesFormulaire.form.AIR}} {{donneesFormulaire.form.AIRexp}}</p>
-      <p>Formulaires : {{donneesFormulaire.form.Formulaires}} {{donneesFormulaire.form.FormulairesDétail}}</p>
-      <p>Mécanisme : {{donneesFormulaire.form.Mécanisme}} {{donneesFormulaire.form.MécanismeNombre}}</p>
-      <p></p><br>
-      <p>Plan d'action: {{donneesFormulaire.form.P2}}{{donneesFormulaire.form.P3}}{{donneesFormulaire.form.P5}}{{donneesFormulaire.form.P9}}{{donneesFormulaire.form.P10}}{{donneesFormulaire.form.P16}}{{donneesFormulaire.form.P17}}{{donneesFormulaire.form.P18}}{{donneesFormulaire.form.P20}}{{donneesFormulaire.form.P21}}{{donneesFormulaire.form.P22}}{{donneesFormulaire.form.P26}}{{donneesFormulaire.form.P32}}{{donneesFormulaire.form.P35}}{{donneesFormulaire.form.P39}}{{donneesFormulaire.form.P40}}</p>
-      <p>PL 85: {{donneesFormulaire.form.L1}}{{donneesFormulaire.form.L2}}{{donneesFormulaire.form.L3}}{{donneesFormulaire.form.L4}}{{donneesFormulaire.form.L5}}{{donneesFormulaire.form.L6}}{{donneesFormulaire.form.L7}}{{donneesFormulaire.form.L8}}{{donneesFormulaire.form.L9}}{{donneesFormulaire.form.L10}}{{donneesFormulaire.form.L11}}{{donneesFormulaire.form.L12}}{{donneesFormulaire.form.L13}}{{donneesFormulaire.form.L14}}{{donneesFormulaire.form.L15}}{{donneesFormulaire.form.L16}}{{donneesFormulaire.form.L17}}{{donneesFormulaire.form.L18}}{{donneesFormulaire.form.L19}}{{donneesFormulaire.form.L20}}{{donneesFormulaire.form.L21}}{{donneesFormulaire.form.L22}}{{donneesFormulaire.form.L23}}{{donneesFormulaire.form.L26}}{{donneesFormulaire.form.L27}}{{donneesFormulaire.form.L28}}{{donneesFormulaire.form.L31}}{{donneesFormulaire.form.L32}}{{donneesFormulaire.form.L34}}{{donneesFormulaire.form.L35}}</p>
-      <p>Autres Mesures: {{donneesFormulaire.form.AutresMesures}}</p>
-      <p>Projets de loi: {{donneesFormulaire.form.ProjetsAlleg}}</p>
+      <pre>{{donneesFormulaire.form}}</pre>
