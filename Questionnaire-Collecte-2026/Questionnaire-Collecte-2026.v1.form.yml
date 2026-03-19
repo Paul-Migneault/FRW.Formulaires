@@ -923,13 +923,22 @@ form:
           id: Autres
           cacherTexteExplicatifChampsObligatoires: true
           components:
+            - name: AutreOuiNon
+              type: radio
+              label: 
+                fr: Votre organisation a-t-elle mis en oeuvre des mesures d'allègement réglementaire, d'allègement administratif ou de prestation électronique en dehors du Plan d'action gouvernental en allègement et des proejts de loi omnibus en allègement du MEIE durant la période du 1er avril 2025 au 31 mars 2026?
+              options: 
+                Oui: Oui
+                Non: Non
             - type: dynamic
+              v-if: val('AutreOuiNon') === 'Oui'
               tag: div
               text:
                 fr: "<p>Veuillez inscrire ci-dessous toutes les autres mesures d'allègement réglementaire, d'allègement administratif et de prestation électronique mises en oeuvre par votre ministère ou organisme durant la période du 1er avril 2025 au 31 mars 2026.</p><br>"
             - name: AutresMesures
               type: repeatableGroup
               repeatable: true
+              v-if: val('AutreOuiNon') === 'Oui'
               validations:
                 optional: null
               label:
@@ -997,9 +1006,17 @@ form:
               tag: div
               text:
                 fr: "<p>Cette section vise à recenser les projets de loi principalement composés de mesures d'allègement, mais qui n'ont pas été portés par le MEIE. Le projet doit avoir été déposé entre le 1er avril 2025 et le 31 mars 2026.</p><br>"
+            - name: PLOuiNon
+              type: radio
+              label: 
+                fr: Votre organisation a-t-elle déposé un projet de loi portant principalement sur l'allègement durant la période du 1er avril 2025 au 31 mars 2026?
+              options: 
+                Oui: Oui
+                Non: Non
             - name: ProjetsAlleg
               type: repeatableGroup
               repeatable: true
+              v-if: val('PLOuiNon') === 'Oui'
               validations:
                 optional: null
               label:
