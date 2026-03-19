@@ -22,7 +22,6 @@ form:
                 fr: Sélectionnez votre ministère/organisme
               type: listeDeroulante
               options: 
-                Test:
                 AMF:
                 AMP:
                 BANQ:
@@ -926,7 +925,7 @@ form:
             - name: AutreOuiNon
               type: radio
               label: 
-                fr: Votre organisation a-t-elle mis en oeuvre des mesures d'allègement réglementaire, d'allègement administratif ou de prestation électronique en dehors du Plan d'action gouvernental en allègement et des proejts de loi omnibus en allègement du MEIE durant la période du 1er avril 2025 au 31 mars 2026?
+                fr: Votre organisation a-t-elle mis en oeuvre des mesures d'allègement réglementaire, d'allègement administratif ou de prestation électronique de service en dehors du Plan d'action gouvernental en allègement et des projets de loi omnibus en allègement du MEIE durant la période du 1er avril 2025 au 31 mars 2026?
               options: 
                 Oui: Oui
                 Non: Non
