@@ -779,6 +779,44 @@ form:
                     optional: null
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L24
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MAMH'
+              label:
+                fr: "Mesure 24: Permettre l'adoption des actes d'imposition d’un mode de financement relativement aux revenus prévus au budget lors de la séance portant sur le budget ou le programme triennal d'immobilisations"
+              components:
+                - name: StatutL24
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL24
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L25
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MEIE'
+              label:
+                fr: "Mesure 25: Ajout de l'achat local à la mission du ministère de l'Économie, de l'Innovation et de l'Énergie"
+              components:
+                - name: StatutL25
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL25
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
             - name: L26
               type: group
               v-if: val('MO') === 'Test' || val('MO') === 'MEIE'
@@ -836,6 +874,44 @@ form:
                     optional: null
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L29
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MEIE'
+              label:
+                fr: "Mesure 29: Retrait de l'exigence pour le sous-ministre d'identifier le fonctionnaire ou le titulaire d'emploi lors de la subdélégation"
+              components:
+                - name: StatutL29
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL29
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L30
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MEIE'
+              label:
+                fr: "Mesure 30: Abrogation des dispositions législatives non en vigueur désignant le ministre de l'Économie et de l'Innovation responsable de l'application de certaines lois"
+              components:
+                - name: StatutL30
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL30
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
             - name: L31
               type: group
               v-if: val('MO') === 'Test' || val('MO') === 'MEIE'
@@ -869,6 +945,25 @@ form:
                     Oui: Oui
                     Non: Non
                 - name: ÉtatL32
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L33
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MRIF'
+              label:
+                fr: "Mesure 33: Mise en oeuvre de l'Accord de reconnaissance mutuelle des qualifications professionnelles des architectes du 10 octobre 2024 établi en vertu de l'Accord économique et commercial global entre le Canada et l'Union européenne et ses États membres"
+              components:
+                - name: StatutL33
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL33
                   type: textarea
                   validations:
                     optional: null
@@ -912,11 +1007,30 @@ form:
                     optional: null
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
+            - name: L36
+              type: group
+              v-if: val('MO') === 'Test' || val('MO') === 'MESS'
+              label:
+                fr: 'Mesure 36: Modifications de nature transitoire en matière d’assistance sociale'
+              components:
+                - name: StatutL36
+                  type: radio
+                  label: 
+                    fr: La mesure a-t-elle été mise en oeuvre sur le terrain?
+                  options: 
+                    Oui: Oui
+                    Non: Non
+                - name: ÉtatL36
+                  type: textarea
+                  validations:
+                    optional: null
+                  label: 
+                    fr: Si non, décrivez l'état de situation de la mesure.
             - type: dynamic
               tag: div
-              v-if: val('MO') !== 'MEIE' && val('MO') !== 'MFQ' && val('MO') !== 'RACJ' && val('MO') !== 'MAPAQ' && val('MO') !== 'MESS' && val('MO') !== 'MRNF' && val('MO') !== 'MELCCFP' && val('MO') !== 'MSP' && val('MO') !== 'MFA' && val('MO') !== 'MTRAV' && val('MO') !== 'MES' && val('MO') !== 'MCC'
+              v-if: val('MO') !== 'MEIE' && val('MO') !== 'MFQ' && val('MO') !== 'RACJ' && val('MO') !== 'MAMH' && val('MO') !== 'MRIF' && val('MO') !== 'MAPAQ' && val('MO') !== 'MESS' && val('MO') !== 'MRNF' && val('MO') !== 'MELCCFP' && val('MO') !== 'MSP' && val('MO') !== 'MFA' && val('MO') !== 'MTRAV' && val('MO') !== 'MES' && val('MO') !== 'MCC'
               text: 
-                fr:  <p>Votre ministère ou organisme n'a pas de mesures dans le PL 85. Vous pouvez passer à la section suivante.</p><br>
+                fr:  <p>Votre ministère ou organisme n'a pas de mesure dans le PL 85. Vous pouvez passer à la section suivante.</p><br>
         - section:
             fr: Autres mesures d'allègement
           id: Autres
@@ -1069,7 +1183,7 @@ form:
               v-if: val('EtatRevision') === 'initial'
               classes: texte-revision
               text:
-                fr: Vous devez cliquer sur le bouton « Valider » afin de vérifier que le formulaire est rempli correctement.
+                fr: Cliquez sur le bouton « Valider » afin de vérifier que le formulaire est rempli correctement.
             - type: dynamic
               tag: div
               v-if: val('EtatRevision') === 'sans-erreur'
