@@ -13,11 +13,14 @@ form:
             fr: Démarrage du questionnaire
           id: select
           components:
+            - type: avis
+              classes: information
+              title:
+                fr: Avant de débuter le questionnaire, il est important d'identifier votre ministère ou organisme.
+              text:
+                fr: |
+                  <p>Cela permettra d'afficher seulement les questions qui vous sont pertinentes dans les différentes sections du questionnaire.</p>
             - name: MO
-              tooltip:
-                text:
-                  fr: 
-                    <p>Avant de débuter le questionnaire, il est important d'identifier votre ministère ou organisme. Cela permettra d'afficher seulement les questions qui vous sont pertinentes dans les différentes sections du questionnaire.</p>
               label:
                 fr: Sélectionnez votre ministère/organisme
               type: listeDeroulante
