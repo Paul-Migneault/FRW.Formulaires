@@ -95,6 +95,7 @@ form:
               removeLabel:
                 fr: Supprimer ce dossier
               limit: 30
+              min: 1
               components:
                 - type: inline
                   components:
