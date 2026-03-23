@@ -84,8 +84,6 @@ form:
               v-if: val('1pour1') === 'Oui'
               type: repeatableGroup
               repeatable: true
-              validations:
-                optional: null
               label:
                 fr: Formalités ajoutées et retirées dans le cadre de la règle du 1 pour 1
               instanceLabel:
