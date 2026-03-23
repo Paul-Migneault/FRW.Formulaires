@@ -125,9 +125,8 @@ form:
                       optional: null
                 - name: descFormalités
                   type: textarea
-                  tooltip: 
-                    text:
-                      fr: Veuillez nommer les formalités touchées par la règle du «un pour un» et indiquer le contexte (projet de loi, de règlement, etc.)
+                  help:
+                    fr: Nommer les formalités touchées par la règle du «un pour un» et indiquer le contexte (projet de loi, de règlement, etc.)
                   label:
                     fr: Détails
             - name: AIR
