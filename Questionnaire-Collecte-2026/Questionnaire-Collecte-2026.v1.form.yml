@@ -1087,11 +1087,11 @@ form:
                     fr: Résultats
                 - name: DateAutreMesure
                   type: date
-                  tooltip:
-                    text:
-                      fr: La date de mise en place doit être entre le 1er avril 2025 et le 31 mars 2026.
                   label:
                     fr: Date de mise en place
+                  validations:
+                    before: '2026-04-01'
+                    after: '2025-03-31'
                 - name: ImpactAutreMesure
                   type: listeDeroulante
                   tooltip:
@@ -1160,11 +1160,11 @@ form:
                   components:
                     - name: DatePL
                       type: date
-                      tooltip:
-                        text:
-                          fr: Inscrivez ici la date de dépôt du projet de loi à l'Assemblée nationale
                       label:
                         fr: Date de dépôt
+                      validations:
+                        before: '2026-04-01'
+                        after: '2025-03-31'
                     - name: ImpactPL
                       type: montant
                       tooltip:
