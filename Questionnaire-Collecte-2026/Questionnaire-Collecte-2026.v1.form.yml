@@ -219,6 +219,7 @@ form:
                   type: textarea
                   validations:
                     optional: null
+                  v-if: this.val('L1.StatutL1') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
                 - type: dynamic
