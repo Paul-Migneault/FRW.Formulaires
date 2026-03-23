@@ -196,6 +196,7 @@ form:
               label:
                 fr: Nombre de lois et règlements révisés avec le mécanisme de révision dans la période
               v-if: val('Mécanisme') === 'Oui'
+              outerClasses: sm
         - section: 
            fr: Loi modifiant diverses dispositions législatives aux fins d’allègement du fardeau administratif (Projet de loi omnibus 85).
           id: PL85
