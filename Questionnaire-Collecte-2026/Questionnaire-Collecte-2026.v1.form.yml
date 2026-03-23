@@ -93,7 +93,6 @@ form:
               removeLabel:
                 fr: Supprimer ce dossier
               limit: 30
-              min: 1
               components:
                 - type: inline
                   components:
@@ -158,8 +157,6 @@ form:
               v-if: val('Formulaires') === 'Oui'
               type: repeatableGroup
               repeatable: true
-              validations:
-                optional: null
               label:
                 fr: Formulaires introduits
               instanceLabel:
@@ -217,8 +214,6 @@ form:
                     Non: Non
                 - name: ÉtatL1
                   type: textarea
-                  validations:
-                    optional: null
                   v-if: val('L1.StatutL1') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
@@ -247,8 +242,7 @@ form:
                     Non: Non
                 - name: ÉtatL2
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L2.StatutL2') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L3
@@ -266,8 +260,7 @@ form:
                     Non: Non
                 - name: ÉtatL3
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L3.StatutL3') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
                 - type: dynamic
@@ -1053,8 +1046,6 @@ form:
               type: repeatableGroup
               repeatable: true
               v-if: val('AutreOuiNon') === 'Oui'
-              validations:
-                optional: null
               label:
                 fr: Autres mesures d'allègement
               instanceLabel:
@@ -1131,8 +1122,6 @@ form:
               type: repeatableGroup
               repeatable: true
               v-if: val('PLOuiNon') === 'Oui'
-              validations:
-                optional: null
               label:
                 fr: Projets de loi en allègement déposés en 2025-2026
               instanceLabel:
