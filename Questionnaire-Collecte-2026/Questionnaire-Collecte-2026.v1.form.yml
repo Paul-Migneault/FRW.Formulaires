@@ -121,8 +121,11 @@ form:
                   type: text
                   label:
                     fr: Numéro DOSSDEC
+                  help:
+                    fr: Format 9999-9999
                   validations:
-                      optional: null
+                    matches: /^\d{4}[-]\d{4}$/
+                    optional: null
                 - name: descFormalités
                   type: textarea
                   help:
@@ -1138,6 +1141,11 @@ form:
                   type: text
                   label:
                     fr: Numéro DOSSDEC
+                  help:
+                    fr: Format 9999-9999
+                  validations:
+                    matches: /^\d{4}[-]\d{4}$/
+                    optional: null
                 - name: TitrePL
                   type: text
                   label:
