@@ -1147,21 +1147,19 @@ form:
                   type: text
                   label:
                     fr: Secteur(s) couvert(s)
-                - type: inline
-                  components:
-                    - name: DatePL
-                      type: date
-                      label:
-                        fr: Date de dépôt
-                      validations:
-                        before: '2026-04-01'
-                        after: '2025-03-31'
-                    - name: ImpactPL
-                      type: montant
-                      help:
-                        fr: Vous trouverez cette donnée dans l'analyse d'impact réglementaire du projet.
-                      label: 
-                        fr: Impact récurrent sur les entreprises ($)
+                - name: DatePL
+                  type: date
+                  label:
+                    fr: Date de dépôt
+                  validations:
+                    before: '2026-04-01'
+                    after: '2025-03-31'
+                - name: ImpactPL
+                  type: montant
+                  help:
+                    fr: Vous trouverez cette donnée dans l'analyse d'impact réglementaire du projet.
+                  label: 
+                    fr: Impact récurrent sur les entreprises ($)
         - section:
             fr: Révision
           id: revision
