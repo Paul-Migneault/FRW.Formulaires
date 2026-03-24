@@ -293,8 +293,7 @@ form:
                     Non: Non
                 - name: ÉtatL4
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L4.StatutL4') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
                 - type: dynamic
@@ -322,8 +321,7 @@ form:
                     Non: Non
                 - name: ÉtatL5
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L5.StatutL5') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
                 - type: dynamic
@@ -351,8 +349,7 @@ form:
                     Non: Non
                 - name: ÉtatL6
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L6.StatutL6') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
                 - type: dynamic
@@ -380,8 +377,7 @@ form:
                     Non: Non
                 - name: ÉtatL7
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L7.StatutL7') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
                 - type: dynamic
@@ -409,8 +405,7 @@ form:
                     Non: Non
                 - name: ÉtatL8
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L8.StatutL8') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L9
@@ -428,8 +423,7 @@ form:
                     Non: Non
                 - name: ÉtatL9
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L9.StatutL9') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
                 - type: dynamic
@@ -457,8 +451,7 @@ form:
                     Non: Non
                 - name: ÉtatL10
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L10.StatutL10') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L11
@@ -476,8 +469,7 @@ form:
                     Non: Non
                 - name: ÉtatL11
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L11.StatutL11') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L12
@@ -495,8 +487,7 @@ form:
                     Non: Non
                 - name: ÉtatL12
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L12.StatutL12') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
                 - type: dynamic
@@ -524,8 +515,7 @@ form:
                     Non: Non
                 - name: ÉtatL13
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L13.StatutL13') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
                 - type: dynamic
@@ -553,8 +543,7 @@ form:
                     Non: Non
                 - name: ÉtatL14
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L14.StatutL14') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L15
@@ -572,8 +561,7 @@ form:
                     Non: Non
                 - name: ÉtatL15
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L15.StatutL15') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L16
@@ -591,8 +579,7 @@ form:
                     Non: Non
                 - name: ÉtatL16
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L16.StatutL16') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
                 - type: dynamic
@@ -620,8 +607,7 @@ form:
                     Non: Non
                 - name: ÉtatL17
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L17.StatutL17') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L18
@@ -639,8 +625,7 @@ form:
                     Non: Non
                 - name: ÉtatL18
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L18.StatutL18') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
                 - type: dynamic
@@ -668,8 +653,7 @@ form:
                     Non: Non
                 - name: ÉtatL19
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L19.StatutL19') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L20
@@ -687,8 +671,7 @@ form:
                     Non: Non
                 - name: ÉtatL20
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L20.StatutL20') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
                 - type: dynamic
@@ -716,8 +699,7 @@ form:
                     Non: Non
                 - name: ÉtatL21
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L21.StatutL21') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
                 - type: dynamic
@@ -745,8 +727,7 @@ form:
                     Non: Non
                 - name: ÉtatL22
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L22.StatutL22') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
                 - type: dynamic
@@ -774,8 +755,7 @@ form:
                     Non: Non
                 - name: ÉtatL23
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L23.StatutL23') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L24
@@ -793,8 +773,7 @@ form:
                     Non: Non
                 - name: ÉtatL24
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L24.StatutL24') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L25
@@ -812,8 +791,7 @@ form:
                     Non: Non
                 - name: ÉtatL25
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L25.StatutL25') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L26
@@ -831,8 +809,7 @@ form:
                     Non: Non
                 - name: ÉtatL26
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L26.StatutL26') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L27
@@ -850,8 +827,7 @@ form:
                     Non: Non
                 - name: ÉtatL27
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L27.StatutL27') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L28
@@ -869,8 +845,7 @@ form:
                     Non: Non
                 - name: ÉtatL28
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L28.StatutL28') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L29
@@ -888,8 +863,7 @@ form:
                     Non: Non
                 - name: ÉtatL29
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L29.StatutL29') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L30
@@ -907,8 +881,7 @@ form:
                     Non: Non
                 - name: ÉtatL30
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L30.StatutL30') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L31
@@ -926,8 +899,7 @@ form:
                     Non: Non
                 - name: ÉtatL31
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L31.StatutL31') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L32
@@ -945,8 +917,7 @@ form:
                     Non: Non
                 - name: ÉtatL32
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L32.StatutL32') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L33
@@ -964,8 +935,7 @@ form:
                     Non: Non
                 - name: ÉtatL33
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L33.StatutL33') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L34
@@ -983,8 +953,7 @@ form:
                     Non: Non
                 - name: ÉtatL34
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L34.StatutL34') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L35
@@ -1002,8 +971,7 @@ form:
                     Non: Non
                 - name: ÉtatL35
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L35.StatutL35') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - name: L36
@@ -1021,8 +989,7 @@ form:
                     Non: Non
                 - name: ÉtatL36
                   type: textarea
-                  validations:
-                    optional: null
+                  v-if: val('L36.StatutL36') === 'Non'
                   label: 
                     fr: Si non, décrivez l'état de situation de la mesure.
             - type: dynamic
