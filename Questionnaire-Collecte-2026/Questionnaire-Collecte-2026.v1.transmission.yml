@@ -12,6 +12,9 @@ gabaritsCourriels:
     a:
       tous: 
         - 'BGCR@economie.gouv.qc.ca'
+    cc:
+      tous:
+        - 'paul.migneault@economie.gouv.qc.ca'
     # Nom de l'expéditeur (Par défaut, "Formulaires en ligne" ou "Online forms" selon la langue)
     nomExpediteur: Questionnaire de collecte 2026
     # Permet de spécifier l'adresse de retour
