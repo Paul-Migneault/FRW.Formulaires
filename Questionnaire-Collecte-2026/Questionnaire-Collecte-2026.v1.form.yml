@@ -1063,9 +1063,6 @@ form:
               components:
                 - name: NomAutreMesure
                   type: text
-                  tooltip:
-                    text:
-                      fr: Nommez la nouvelle mesure d'allègement réglementaire ou administratif ou bien le service dont la prestation peut désormais se faire électroniquement.
                   label:
                     fr: Nom de la mesure
                 - name: TypeAutreMesure
@@ -1078,9 +1075,8 @@ form:
                     PES: Prestation électronique de service
                 - name: RésultatsAutreMesure
                   type: textarea
-                  tooltip:
-                    text:
-                      fr: Expliquez ici comment cette mesure s'est concrétisée, que ce soit par de nouveaux règlements, procédures ou systèmes.
+                  help:
+                    fr: Expliquez ici comment cette mesure s'est concrétisée, que ce soit par de nouveaux règlements, procédures ou systèmes.
                   label:
                     fr: Résultats
                 - name: DateAutreMesure
@@ -1092,11 +1088,8 @@ form:
                     after: '2025-03-31'
                 - name: ImpactAutreMesure
                   type: listeDeroulante
-                  tooltip:
-                    text:
-                      fr: Utilisez la liste déroulante pour indiquer le principal impact positif pour les entreprises.
                   label: 
-                    fr: Principal impact sur les entreprises
+                    fr: Principal impact positif sur les entreprises
                   options:
                     Temps: Réduction du temps passé à remplir formalités
                     Nombre: Réduction du nombre de formalités
@@ -1152,9 +1145,6 @@ form:
                     fr: Titre
                 - name: SecteursPL
                   type: text
-                  tooltip:
-                    text:
-                      fr: Inscrivez ici les secteurs d'activités dans lesquels opèrent les entreprises touchées par les mesures du projet de loi.
                   label:
                     fr: Secteur(s) couvert(s)
                 - type: inline
@@ -1168,11 +1158,10 @@ form:
                         after: '2025-03-31'
                     - name: ImpactPL
                       type: montant
-                      tooltip:
-                        text:
-                          fr: Inscrivez l'estimation des économies récurrentes pour les entreprises découlant des mesures du projet de loi.
+                      help:
+                        fr: Vous trouverez cette donnée dans l'analyse d'impact réglementaire du projet.
                       label: 
-                        fr: Impact sur les entreprises ($)
+                        fr: Impact récurrent sur les entreprises ($)
         - section:
             fr: Révision
           id: revision
