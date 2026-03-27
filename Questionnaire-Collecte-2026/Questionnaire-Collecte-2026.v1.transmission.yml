@@ -1,4 +1,5 @@
 etapes:
+    - tache: genererPdf
     - tache: envoyerCourriel
       options:
            # Le gabarit spécifié doit être défini dans la section "gabaritsCourriels"
