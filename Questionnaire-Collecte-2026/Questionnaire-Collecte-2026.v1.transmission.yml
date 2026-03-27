@@ -1,5 +1,5 @@
 etapes:
-    - tache: genererWord
+    #- tache: genererWord
     - tache: envoyerCourriel
       options:
            # Le gabarit spécifié doit être défini dans la section "gabaritsCourriels"
