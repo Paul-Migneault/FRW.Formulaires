@@ -1,5 +1,7 @@
 etapes:
-    - tache: genererPdf
+    - tache: genererWord
+      options:
+          fichierBind: Questionnaire-Collecte-2026.bind.yml
     - tache: envoyerCourriel
       options:
            # Le gabarit spécifié doit être défini dans la section "gabaritsCourriels"
