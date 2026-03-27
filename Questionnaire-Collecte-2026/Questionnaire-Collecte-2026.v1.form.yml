@@ -3,6 +3,8 @@
 config:
   securite: 
     accesAnonyme: true 
+  confirmationTransmission:
+    telechargementCopieFormulaire: true
     
 form:
   title:
