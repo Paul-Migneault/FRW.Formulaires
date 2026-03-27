@@ -16,7 +16,6 @@ templates:
   name: Fichier gabarit
   gabarit: 
     fr: Questionnaire-Collecte-2026.gabarit.FR.docx
-    en: Questionnaire-Collecte-2026.gabarit.EN.docx
   #gabarit: 
   #  fr: Referencement-Entreprises.FR.docx
   #ignorer: 
