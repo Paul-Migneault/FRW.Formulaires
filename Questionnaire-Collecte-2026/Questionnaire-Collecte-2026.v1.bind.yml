@@ -14,8 +14,8 @@ bundles:
 templates:
 - id: template1
   name: Fichier gabarit
-  gabarit: 
-    fr: Questionnaire-Collecte-2026.gabarit.FR.docx
+  #gabarit: 
+    #fr: Questionnaire-Collecte-2026.gabarit.FR.docx
   #gabarit: 
   #  fr: Referencement-Entreprises.FR.docx
   #ignorer: 
